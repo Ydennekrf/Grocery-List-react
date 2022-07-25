@@ -1,5 +1,5 @@
 {
-  "name": "jest-acorn",
+  "name": "grocery-list-react",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ydennekrf/Jest-Acorn.git"
+    "url": "git+https://github.com/Ydennekrf/grocery-list-react.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ydennekrf/Jest-Acorn/issues"
+    "url": "https://github.com/Ydennekrf/grocery-list-react/issues"
   },
-  "homepage": "https://github.com/Ydennekrf/Jest-Acorn#readme",
+  "homepage": "https://github.com/Ydennekrf/grocery-list-react#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^6.1.1",

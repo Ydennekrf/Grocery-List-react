@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Users } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
     const userData = await Users.create(req.body);
 
@@ -27,7 +27,7 @@ router.get('/sendMsg',  async(req, res) => {
     res.status(500).json(err);
   }
 })
-
+// logs user in
 router.post('/login', async (req, res) => {
   try {
     const userData = await Users.findOne({ where: { email: req.body.email } });
@@ -39,7 +39,10 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    const validPassword = await userData.checkPassword(req.body.password);
+    const validPassword = await bcrypt.compare(
+      req.body.password,
+      userData.password
+    );
 
     if (!validPassword) {
       res
@@ -52,19 +55,19 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.logged_in = true;
       
-      res.json({ user: userData, message: 'You are now logged in!' });
+      res.status(200).json('You are now logged in!');
     });
 
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
-
+// logs user out
 router.post('/logout', withAuth, (req, res) => {
   if (req.session.logged_in) {
     req.session.destroy(() => {
-      res.status(204).end();
+      res.status(200).json('logged out');
     });
   } else {
     res.status(404).end();

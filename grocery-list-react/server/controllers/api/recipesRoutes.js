@@ -1,9 +1,10 @@
 const router = require('express').Router();
 const {Recipes, Ingredients, RecipeIngredient } = require('../../models');
 const  Units  =require('../../models/units');
+const withAuth = require ('../../utils/auth');
 
 //user's dashboard page
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findAll({ 
               
@@ -34,7 +35,7 @@ router.get('/dashboard', async (req, res) => {
 
 
 //get single recipe data by id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findByPk(req.params.id);
     const recipe = dbRecipeData.get({ plain: true });
@@ -47,7 +48,7 @@ router.get('/:id', async (req, res) => {
 
 
 //get all recipes data
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     const dbRecipeData = await Recipes.findAll({ 
               
