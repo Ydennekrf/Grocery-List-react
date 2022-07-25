@@ -1,0 +1,285 @@
+const { RecipeIngredient } = require('../models');
+
+const recipeIngredientSeed = [
+    {
+    recipe_id: 1,
+    ingredient_id: 1,
+    amount: 0.25,
+},   
+{
+    recipe_id: 1,
+    ingredient_id: 2,
+    amount: 1,
+}, 
+  {
+    recipe_id: 1,
+    ingredient_id: 3,
+    amount: 6,
+},   {
+    recipe_id: 1,
+    ingredient_id: 4,
+    amount: 250,
+},   {
+    recipe_id: 1,
+    ingredient_id: 5,
+    amount: 50,
+},   {
+    recipe_id: 1,
+    ingredient_id: 6,
+    amount: 500,
+},   {
+    recipe_id: 1,
+    ingredient_id: 7,
+    amount: 75,
+},   {
+    recipe_id: 1,
+    ingredient_id: 8,
+    amount: 50,
+},   {
+    recipe_id: 1,
+    ingredient_id: 9,
+    amount: 5,
+},   {
+    recipe_id: 1,
+    ingredient_id: 10,
+    amount: 5,
+},   {
+    recipe_id: 1,
+    ingredient_id: 11,
+    amount: 0.25,
+},   
+{
+    recipe_id: 2,
+    ingredient_id: 12,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 13,
+    amount: 250,
+},   {
+    recipe_id: 2,
+    ingredient_id: 14,
+    amount: 0.25,
+},   {
+    recipe_id: 2,
+    ingredient_id: 1,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 2,
+    amount: 3,
+},   {
+    recipe_id: 2,
+    ingredient_id: 15,
+    amount: 500,
+},   {
+    recipe_id: 2,
+    ingredient_id: 8,
+    amount: 100,
+},   {
+    recipe_id: 2,
+    ingredient_id: 16,
+    amount: 50,
+},   {
+    recipe_id: 2,
+    ingredient_id: 17,
+    amount: 1,
+},   {
+    recipe_id: 2,
+    ingredient_id: 9,
+    amount: 5,
+},   {
+    recipe_id: 2,
+    ingredient_id: 10,
+    amount: 5,
+},   {
+    recipe_id: 2,
+    ingredient_id: 11,
+    amount: 0.5,
+}, 
+  {
+    recipe_id: 3,
+    ingredient_id: 18,
+    amount: 10,
+},   {
+    recipe_id: 3,
+    ingredient_id: 19,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 20,
+    amount: 2,
+},   {
+    recipe_id: 3,
+    ingredient_id: 21,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 22,
+    amount: 1.2,
+},   {
+    recipe_id: 3,
+    ingredient_id: 23,
+    amount: 2.25,
+},   {
+    recipe_id: 3,
+    ingredient_id: 24,
+    amount: 500,
+},   {
+    recipe_id: 3,
+    ingredient_id: 25,
+    amount: 1,
+},   {
+    recipe_id: 3,
+    ingredient_id: 9,
+    amount: 10,
+},   {
+    recipe_id: 3,
+    ingredient_id: 10,
+    amount: 10,
+},  
+ {
+    recipe_id: 4,
+    ingredient_id: 22,
+    amount: 2,
+},   {
+    recipe_id: 4,
+    ingredient_id: 19,
+    amount: 1000,
+},   {
+    recipe_id: 4,
+    ingredient_id: 26,
+    amount: 0.5,
+},   {
+    recipe_id: 4,
+    ingredient_id: 27,
+    amount: 3,
+},   {
+    recipe_id: 4,
+    ingredient_id: 28,
+    amount: 125,
+},   {
+    recipe_id: 4,
+    ingredient_id: 29,
+    amount: 0.5,
+},   {
+    recipe_id: 4,
+    ingredient_id: 9,
+    amount: 15,
+},   {
+    recipe_id: 4,
+    ingredient_id: 10,
+    amount: 15,
+},   {
+    recipe_id: 4,
+    ingredient_id: 5,
+    amount: 500,
+}, 
+  {
+    recipe_id: 5,
+    ingredient_id: 13,
+    amount: 500,
+},   {
+    recipe_id: 5,
+    ingredient_id: 19,
+    amount: 500,
+},   {
+    recipe_id: 5,
+    ingredient_id: 16,
+    amount: 250,
+},   {
+    recipe_id: 5,
+    ingredient_id: 27,
+    amount: 2,
+},   {
+    recipe_id: 5,
+    ingredient_id: 9,
+    amount: 5,
+},   {
+    recipe_id: 5,
+    ingredient_id: 10,
+    amount: 5,
+},   {
+    recipe_id: 5,
+    ingredient_id: 30,
+    amount: 50,
+},   {
+    recipe_id: 5,
+    ingredient_id: 3,
+    amount: 10,
+},   {
+    recipe_id: 5,
+    ingredient_id: 31,
+    amount: 150,
+},   
+{
+    recipe_id: 6,
+    ingredient_id: 32,
+    amount: 1,
+},   {
+    recipe_id: 6,
+    ingredient_id: 1,
+    amount: 3,
+},   {
+    recipe_id: 6,
+    ingredient_id: 23,
+    amount: 3,
+},   {
+    recipe_id: 6,
+    ingredient_id: 33,
+    amount: 2,
+},   {
+    recipe_id: 6,
+    ingredient_id: 34,
+    amount: 2,
+},   {
+    recipe_id: 6,
+    ingredient_id: 13,
+    amount: 75,
+},   {
+    recipe_id: 6,
+    ingredient_id: 35,
+    amount: 75,
+},   {
+    recipe_id: 6,
+    ingredient_id: 30,
+    amount: 35,
+},   
+{
+    recipe_id: 7,
+    ingredient_id: 36,
+    amount: 250,
+},   {
+    recipe_id: 7,
+    ingredient_id: 9,
+    amount: 500,
+},   {
+    recipe_id: 7,
+    ingredient_id: 15,
+    amount: 500,
+},   {
+    recipe_id: 7,
+    ingredient_id: 30,
+    amount: 125,
+},   {
+    recipe_id: 7,
+    ingredient_id: 37,
+    amount: 10,
+},   {
+    recipe_id: 7,
+    ingredient_id: 38,
+    amount: 35,
+},  {
+    recipe_id: 7,
+    ingredient_id: 10,
+    amount: 5,
+},   {
+    recipe_id: 7,
+    ingredient_id: 19,
+    amount: 35,
+}
+]
+
+const recipeIngredientSeeding = () => RecipeIngredient.bulkCreate(recipeIngredientSeed);
+
+module.exports = recipeIngredientSeeding;
